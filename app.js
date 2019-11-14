@@ -32,8 +32,8 @@ if (!isProduction) {
   app.use(errorhandler());
 }
 
-// var dev_db_url = process.env.DEV_DB_URI;
-var dev_db_url = 'mongodb://conduit339:conduit339@ds135233.mlab.com:35233/conduit339';
+var dev_db_url = process.env.DEV_DB_URI;
+// Add actual db url here when you rebuild, env file not working
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true});
 mongoose.Promise = global.Promise;
